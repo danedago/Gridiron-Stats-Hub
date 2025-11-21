@@ -19,6 +19,8 @@ header {
   color: white;
   text-align: center;
   padding: 1.5em 0;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
 }
 
 nav ul {
@@ -49,9 +51,14 @@ nav a:hover {
 .banner {
   width: 100%;
   height: auto;
-  max-height: 120px; /* make banner a bit shorter */
+  max-height: 120px;
   object-fit: cover;
   display: block;
+}
+
+.page-title {
+  text-align: center;
+  margin-top: 1.5em;
 }
 
 .card-container {
@@ -74,6 +81,73 @@ nav a:hover {
 
 .card:hover {
   transform: scale(1.03);
+}
+
+/* ---------- TABLE STYLING ---------- */
+.table-section {
+  width: 90%;
+  margin: 2em auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+th, td {
+  padding: 1em;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+th {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f0f0f0;
+}
+
+/* ---------- FORM STYLING ---------- */
+.signup-form {
+  width: 90%;
+  max-width: 500px;
+  margin: 2em auto;
+  background: white;
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.signup-form label {
+  display: block;
+  margin: 1em 0 0.3em;
+}
+
+.signup-form input, .signup-form textarea {
+  width: 100%;
+  padding: 0.7em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.signup-form button {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 0.8em 1.5em;
+  margin-top: 1em;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.signup-form button:hover {
+  background-color: var(--primary-color);
 }
 
 footer {
