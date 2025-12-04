@@ -2,11 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="description" content="Join Gridiron Stats Hub to receive updates, contribute content, or volunteer.">
+  <meta name="author" content="Dane Dagostino">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Join the Team - Gridiron Stats Hub</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header>
     <h1>Gridiron Stats Hub</h1>
   </header>
@@ -16,32 +21,50 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="team-stats.html">Team Stats</a></li>
       <li><a href="player-highlights.html">Player Highlights</a></li>
-      <li><a href="join.html">Join the Team</a></li>
+      <li><a href="join.html" aria-current="page">Join the Team</a></li>
     </ul>
   </nav>
 
-  <main>
+  <main id="main">
     <h2 class="page-title">Join the Team</h2>
+    <p>Complete this short form to subscribe to updates or to volunteer content for our site.</p>
 
-    <form class="signup-form">
-      <label>Name:</label>
-      <input type="text" required>
+    <form id="signup-form" class="signup-form" action="#" method="post" aria-labelledby="join-heading">
+      <h3 id="join-heading" class="visually-hidden">Sign up form</h3>
 
-      <label>Email:</label>
-      <input type="email" required>
+      <label for="name">Full Name <span aria-hidden="true">*</span></label>
+      <input id="name" name="name" type="text" required>
 
-      <label>Favorite NFL Team:</label>
-      <input type="text">
+      <label for="email">Email Address <span aria-hidden="true">*</span></label>
+      <input id="email" name="email" type="email" required>
 
-      <label>Why Do You Want to Join?</label>
-      <textarea></textarea>
+      <label for="team">Favorite NFL Team</label>
+      <select id="team" name="team">
+        <option value="">-- Select a team --</option>
+        <option value="cards">Arizona Cardinals</option>
+        <option value="chiefs">Kansas City Chiefs</option>
+        <option value="bills">Buffalo Bills</option>
+      </select>
+
+      <label for="reason">Why do you want to join?</label>
+      <textarea id="reason" name="reason" rows="4" placeholder="Tell us why you'd like to contribute or join."></textarea>
+
+      <label for="consent" class="checkbox-label">
+        <input id="consent" name="consent" type="checkbox" value="yes">
+        I agree to receive occasional emails from Gridiron Stats Hub.
+      </label>
 
       <button type="submit">Submit</button>
     </form>
   </main>
 
   <footer>
-    <p>Contact us at <a href="#">gridironstatshub@email.com</a></p>
+    <p>Contact us: gridironstatshub [at] email.com — use the <a href="join.html">Join the Team</a> form to reach us.</p>
+    <p>&copy; <span id="year"></span> Gridiron Stats Hub</p>
   </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

@@ -2,11 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="description" content="2024 Team Stats — Points per game, yards, and records for top NFL teams">
+  <meta name="keywords" content="NFL, team stats, points per game, total yards, standings">
+  <meta name="author" content="Dane Dagostino">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Team Stats - Gridiron Stats Hub</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header>
     <h1>Gridiron Stats Hub</h1>
   </header>
@@ -14,49 +20,62 @@
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="team-stats.html">Team Stats</a></li>
+      <li><a href="team-stats.html" aria-current="page">Team Stats</a></li>
       <li><a href="player-highlights.html">Player Highlights</a></li>
       <li><a href="join.html">Join the Team</a></li>
     </ul>
   </nav>
 
-  <h2 class="page-title">2024 Team Stats</h2>
+  <main id="main">
+    <h2 class="page-title">2024 Team Stats</h2>
+    <p class="intro">A snapshot of offensive output and team records for selected top-performing squads this season.</p>
 
-  <section class="table-section">
-    <table>
-      <thead>
-        <tr>
-          <th>Team</th>
-          <th>Points Per Game</th>
-          <th>Total Yards</th>
-          <th>Record</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Philadelphia Eagles</td>
-          <td>28.4</td>
-          <td>398.2</td>
-          <td>10–5</td>
-        </tr>
-        <tr>
-          <td>Kansas City Chiefs</td>
-          <td>26.1</td>
-          <td>412.7</td>
-          <td>11–4</td>
-        </tr>
-        <tr>
-          <td>San Francisco 49ers</td>
-          <td>27.8</td>
-          <td>421.3</td>
-          <td>12–3</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
+    <section class="table-section" aria-labelledby="team-stats-heading">
+      <h3 id="team-stats-heading" class="visually-hidden">Team statistics table</h3>
+
+      <table>
+        <caption>Selected team offensive stats and records (2024)</caption>
+        <thead>
+          <tr>
+            <th scope="col">Team</th>
+            <th scope="col">Points Per Game</th>
+            <th scope="col">Total Yards</th>
+            <th scope="col">Record</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Philadelphia Eagles</td>
+            <td>28.4</td>
+            <td>398.2</td>
+            <td>10–5</td>
+          </tr>
+          <tr>
+            <td>Kansas City Chiefs</td>
+            <td>26.1</td>
+            <td>412.7</td>
+            <td>11–4</td>
+          </tr>
+          <tr>
+            <td>San Francisco 49ers</td>
+            <td>27.8</td>
+            <td>421.3</td>
+            <td>12–3</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="table-note">These sample stats are for demonstration; replace with your final data if desired.</p>
+    </section>
+  </main>
 
   <footer>
-    <p>Contact us at <a href="#">gridironstatshub@email.com</a></p>
+    <p>Contact us: gridironstatshub [at] email.com — use the <a href="join.html">Join the Team</a> form to reach us.</p>
+    <p>&copy; <span id="year"></span> Gridiron Stats Hub</p>
   </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

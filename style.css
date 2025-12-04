@@ -6,6 +6,7 @@
   --card-background: #ffffff;
 }
 
+/* Basic page */
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: var(--background-color);
@@ -14,15 +15,17 @@ body {
   color: var(--text-color);
 }
 
+/* Header */
 header {
   background-color: var(--primary-color);
   color: white;
   text-align: center;
-  padding: 1.5em 0;
-  font-size: 1.3rem;
+  padding: 1.25rem 0;
+  font-size: 1.25rem;
   letter-spacing: 1px;
 }
 
+/* Navigation */
 nav ul {
   background-color: var(--accent-color);
   list-style: none;
@@ -34,72 +37,88 @@ nav ul {
 }
 
 nav li {
-  margin: 0 1em;
+  margin: 0 0.5rem;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  padding: 1em;
+  padding: 0.9rem 1rem;
   display: block;
 }
 
-nav a:hover {
+nav a:hover,
+nav a:focus {
   background-color: var(--primary-color);
+  outline: none;
 }
 
+/* Banner */
 .banner {
   width: 100%;
   height: auto;
-  max-height: 120px;
+  max-height: 160px;
   object-fit: cover;
   display: block;
 }
 
+/* Page title / intro */
 .page-title {
   text-align: center;
-  margin-top: 1.5em;
+  margin-top: 1.5rem;
 }
 
+/* Cards */
 .card-container {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  padding: 2em;
+  padding: 1.25rem;
 }
 
 .card {
   background-color: var(--card-background);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   border-radius: 8px;
-  padding: 1.5em;
+  padding: 1rem;
   width: 300px;
-  margin: 1em;
+  margin: 0.75rem;
   text-align: center;
   transition: transform 0.2s ease-in-out;
 }
 
-.card:hover {
+.card:hover,
+.card:focus-within {
   transform: scale(1.03);
 }
 
-/* ---------- TABLE STYLING ---------- */
+/* Images inside cards */
+.card-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  display: block;
+}
+
+/* Table section */
 .table-section {
   width: 90%;
-  margin: 2em auto;
+  margin: 1.5rem auto;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
   background-color: white;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 th, td {
-  padding: 1em;
-  border: 1px solid #ccc;
-  text-align: center;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  text-align: left;
 }
 
 th {
@@ -111,49 +130,123 @@ tr:nth-child(even) {
   background-color: #f0f0f0;
 }
 
-/* ---------- FORM STYLING ---------- */
+/* Form styling */
 .signup-form {
   width: 90%;
-  max-width: 500px;
-  margin: 2em auto;
+  max-width: 520px;
+  margin: 1.5rem auto;
   background: white;
-  padding: 2em;
+  padding: 1.25rem;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
 .signup-form label {
   display: block;
-  margin: 1em 0 0.3em;
+  margin: 0.8rem 0 0.25rem;
+  font-weight: 600;
 }
 
-.signup-form input, .signup-form textarea {
+.signup-form input,
+.signup-form select,
+.signup-form textarea {
   width: 100%;
-  padding: 0.7em;
+  padding: 0.6rem;
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-size: 1rem;
 }
 
 .signup-form button {
   background-color: var(--accent-color);
   color: white;
   border: none;
-  padding: 0.8em 1.5em;
-  margin-top: 1em;
+  padding: 0.8rem 1rem;
+  margin-top: 1rem;
   cursor: pointer;
   width: 100%;
   border-radius: 4px;
   font-size: 1rem;
 }
 
-.signup-form button:hover {
+.signup-form button:hover,
+.signup-form button:focus {
   background-color: var(--primary-color);
+  outline: none;
 }
 
+/* Video helpers */
+.video-section video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0.75rem 0;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+/* Footer */
 footer {
   background-color: var(--primary-color);
   color: white;
   text-align: center;
-  padding: 1em 0;
-  margin-top: 2em;
+  padding: 1rem 0;
+  margin-top: 1.5rem;
+}
+
+/* Accessibility & utilities */
+:focus {
+  outline: 3px solid #ffd166;
+  outline-offset: 3px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* skip-link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  background: #111;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  border-radius: 4px;
+}
+
+/* visually-hidden helper */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+/* Responsive tweaks */
+@media (max-width: 700px) {
+  nav ul {
+    flex-direction: column;
+    gap: 0;
+    align-items: stretch;
+  }
+
+  nav li {
+    margin: 0;
+  }
+
+  .card {
+    width: calc(100% - 2rem);
+  }
+
+  .banner {
+    max-height: 180px;
+  }
 }

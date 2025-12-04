@@ -2,11 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="description" content="Player highlights and short clips from this week's NFL action - Gridiron Stats Hub">
+  <meta name="keywords" content="NFL, player highlights, quarterback, running back, defense">
+  <meta name="author" content="Dane Dagostino">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Player Highlights - Gridiron Stats Hub</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header>
     <h1>Gridiron Stats Hub</h1>
   </header>
@@ -15,34 +21,83 @@
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="team-stats.html">Team Stats</a></li>
-      <li><a href="player-highlights.html">Player Highlights</a></li>
+      <li><a href="player-highlights.html" aria-current="page">Player Highlights</a></li>
       <li><a href="join.html">Join the Team</a></li>
     </ul>
   </nav>
 
-  <main>
+  <main id="main">
     <h2 class="page-title">Player Highlights</h2>
+    <p class="intro">Weekly spotlight on standout players, short clips, and quick stat summaries.</p>
 
-    <section class="card-container">
-      <div class="card">
-        <h3>Top QB Performance</h3>
-        <p>Highlight of the week’s best quarterback stats and plays.</p>
-      </div>
+    <section class="card-container" aria-label="Top performances">
+      <article class="card" aria-labelledby="qb-heading">
+        <img src="images/qb-play.avif" alt="Quarterback throwing a pass" class="card-img">
+        <h3 id="qb-heading">Top QB Performance</h3>
+        <p>Highlight of the week’s best quarterback stats and game-changing plays.</p>
+      </article>
 
-      <div class="card">
-        <h3>Top RB Performance</h3>
+      <article class="card" aria-labelledby="rb-heading">
+        <img src="images/rb-play.avif" alt="Running back breaking a tackle" class="card-img">
+        <h3 id="rb-heading">Top RB Performance</h3>
         <p>Breaking down the most impactful rushing plays this week.</p>
-      </div>
+      </article>
 
-      <div class="card">
-        <h3>Top Defensive Player</h3>
-        <p>See which defensive star made game-changing plays.</p>
-      </div>
+      <article class="card" aria-labelledby="def-heading">
+        <img src="images/def-play.avif" alt="Defensive player making a tackle" class="card-img">
+        <h3 id="def-heading">Top Defensive Player</h3>
+        <p>Which defensive star changed the momentum — sacks, tackles, and turnovers.</p>
+      </article>
+    </section>
+
+    <section class="stats-section" aria-labelledby="stats-heading">
+      <h3 id="stats-heading">Quick Player Stats (This Week)</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Player</th>
+            <th>Position</th>
+            <th>Key Stat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John Doe</td>
+            <td>QB</td>
+            <td>315 passing yards, 3 TD</td>
+          </tr>
+          <tr>
+            <td>Alex Smith</td>
+            <td>RB</td>
+            <td>127 rushing yards</td>
+          </tr>
+          <tr>
+            <td>Sam Runner</td>
+            <td>LB</td>
+            <td>10 tackles, 1 INT</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="video-section" aria-labelledby="player-video-heading">
+      <h3 id="player-video-heading">Short Highlights Clip</h3>
+      <p>Local clip to meet the &lt;video&gt; requirement; keep it short for easier upload.</p>
+      <video controls width="720" preload="metadata">
+        <source src="media/player-highlight.mp4" type="video/mp4">
+        <source src="media/player-highlight.webm" type="video/webm">
+        Your browser does not support the video tag.
+      </video>
     </section>
   </main>
 
   <footer>
-    <p>Contact us at <a href="#">gridironstatshub@email.com</a></p>
+    <p>Contact us: gridironstatshub [at] email.com — use the <a href="join.html">Join the Team</a> form to reach us.</p>
+    <p>&copy; <span id="year"></span> Gridiron Stats Hub</p>
   </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
